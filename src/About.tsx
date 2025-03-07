@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import Navbar from "./components/Navbar";
 import About2 from './components/About_div';

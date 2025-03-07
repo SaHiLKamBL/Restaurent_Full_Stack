@@ -20,9 +20,8 @@ function App() {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
-    formState: { errors },
+ 
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {

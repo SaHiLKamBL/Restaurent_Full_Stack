@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import Navbar from "./components/Navbar";
 import Footer from './components/Footer';
@@ -19,9 +19,9 @@ function Contact() {
   const {
     register,
     handleSubmit,
-    watch,
+
     reset,
-    formState: { errors },
+  
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {

@@ -1,10 +1,10 @@
-import { useEffect,useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import React from 'react'
+
 import Navbar from './components/Navbar'
 import burgers from './burgers.json'
 import Footer from './components/Footer';
-import Bill from './Bill';
+
 
 const Menu = () => {
   let navigate=useNavigate();

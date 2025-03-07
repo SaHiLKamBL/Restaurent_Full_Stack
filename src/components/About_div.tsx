@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Number from './Number'
 
 let About_div = () => {
