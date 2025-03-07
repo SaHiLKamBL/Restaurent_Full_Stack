@@ -5,6 +5,8 @@ import App from './App.tsx'
 import About from './About.tsx'
 import Service from './Service.tsx'
 import Contact from './Contact.tsx'
+import Menu from './Menu.tsx'
+import Bill from './Bill.tsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const router=createBrowserRouter([
@@ -23,6 +25,14 @@ const router=createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/menu',
+        element: <Menu />,
+      },
+      {
+        path: '/bill',
+        element: <Bill />,
       },
 ]);
 createRoot(document.getElementById('root')!).render(

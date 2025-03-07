@@ -1,8 +1,45 @@
 import "./App.css"
-
+import Service from "./components/Service_div";
 import Navbar from "./components/Navbar";
+import About from "./components/About_div";
+import Chefs from "./components/Chefs";
+import Footer from "./components/Footer";
+import { useForm, SubmitHandler } from "react-hook-form"
 
 function App() {
+  type Inputs = {
+    example: string
+    username:string
+    date:string
+    email:string
+    people:number
+    text:string
+    exampleRequired: string
+  }
+  
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>()
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    reset();
+  
+    let r = await fetch("http://localhost:3000/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  
+    let res = await r.json();
+    console.log(res);
+  };
+  
   return (
     <>
       <div className="w-[100vw] h-[100vh] bg-red-400 bg-cover bg-center relative overflow-x-hidden" style={{ backgroundImage: `url('src/assets/bgimage.jpg')` }}>
@@ -29,137 +66,73 @@ function App() {
 
       {/* div-2 */}
 
-      <div className="w-[100vw] h-[150vh] bg-slate-50  ">
-        <div className="w-[100vw] h-96 flex justify-evenly items-center ">
-          <div className="w-1/5 h-72  flex flex-col justify-evenly items-start px-5 bg-white shadow-lg shadow-black hover:shadow-md ">
-            <img src="src\assets\icons8-manager-100.png" alt="img1" />
-            <h1 className="text-2xl font-bold text-black">Master Chef</h1>
-            <p className="text-lg text-black font-medium">Lorem ipsum dolor elit. Minus modi ipsam laborum quod doloremque porro.</p>
-          </div>
-          <div className="w-1/5 h-72  flex flex-col justify-evenly items-start px-5 bg-white shadow-lg shadow-black hover:shadow-md">
-            <img src="src\assets\icons8-restaurant-100.png" alt="img1" />
-            <h1 className="text-2xl font-bold text-black">Quality Food</h1>
-            <p className="text-lg text-black font-medium">Lorem ipsum dolor elit. Minus modi ipsam laborum quod doloremque porro.</p>
-          </div>
-          <div className="w-1/5 h-72  flex flex-col justify-evenly items-start px-5 bg-white shadow-lg shadow-black hover:shadow-md">
-            <img src="src\assets\icons8-shopping-cart-100.png" alt="img1" />
-            <h1 className="text-2xl font-bold text-black">Online Order</h1>
-            <p className="text-lg text-black font-medium">Lorem ipsum dolor elit. Minus modi ipsam laborum quod doloremque porro.</p>
-          </div>
+      <Service />
 
-          <div className="w-1/5 h-72  flex flex-col justify-evenly items-start px-5 bg-white shadow-lg shadow-black hover:shadow-md">
-            <img src="src\assets\icons8-service-100.png" alt="img1" />
-            <h1 className="text-2xl font-bold text-black">24/7 service</h1>
-            <p className="text-lg text-black font-medium">Lorem ipsum dolor elit. Minus modi ipsam laborum quod doloremque porro.</p>
-          </div>
+      <br />
+      <br />
 
-        </div>
+      <About />
 
-        <br />
-        <br />
-        <div className="w-full h-[80vh] flex justify-between items-center px-5 ">
-          <div className="grid grid-cols-2 grid-rows-2 gap-2">
-            <img className="w-80 h-80 " src="src\assets\about-1.jpg" alt="about1" />
-            <div className="flex justify-start items-end">
-              <img className="h-60 w-60" src="src\assets\about-2.jpg" alt="about1" />
-            </div>
-            <div className="flex justify-end items-start">
-              <img className="h-60 w-60" src="src\assets\about-3.jpg" alt="about1" />
-            </div>
-            <img className="w-80 h-80" src="src\assets\about-4.jpg" alt="about1" />
-          </div>
-
-          <div className="w-[50vw] flex justify-evenly flex-col items-start">
-            <h1 className="text-4xl font-bold text-orange-400">About Us</h1>
-            <br />
-            <span className="text-3xl font-bold text-black flex ">Welcome to <img src="src\assets\icons8-restaurant-52.png" alt="reto" />Saeresto</span>
-            <p className="text-xl text-slate-600 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed similique explicabo beatae sapiente tempora non odio molestias iure itaque quo.
-            </p>
-            <br />
-            <p className="text-xl text-slate-600 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed similique explicabo beatae sapiente tempora non odio molestias iure itaque quo.
-            </p>
-            <br />
-            <br />
-
-            <div className="w-[50vw] flex  items-center px-5 ">
-
-              <div className="flex items-center w-1/3 border-orange-400 border-l-4 mr-10" >
-                <p className="text-6xl font-bold text-orange-400 mr-2 ml-1">15</p>
-                <p>
-                  <h1 className="text-2xl text-slate-600 font-medium m-0">Years of</h1>
-                  <h1 className="text-3xl text-black font font-semibold m-0">Experience</h1>
-                </p>
-              </div>
-
-              <div className="flex items-center w-1/2 border-l-4 border-l-orange-400">
-                <p className="text-6xl font-bold text-orange-400 mr-2 ml-1">50</p>
-                <p>
-                  <h1 className="text-2xl text-slate-600 font-medium m-0">Popular</h1>
-                  <h1 className="text-3xl text-black font font-semibold m-0">Master Chef</h1>
-                </p>
-              </div>
-            </div>
-            <button className='mt-10 text-white text-2xl font-semibold bg-orange-400 w-[213px] h-[57px] my-5 backdrop-opacity-100'>Read More</button>
-
-
-          </div>
-
-        </div>
-      </div>
-
-
+<br /> 
+<br />
 
 
 
       {/* div-3 */}
 
       <div className="w-[100vw] h-[90vh] flex flex-col justify-evenly items-center">
-        <h1 className="text-2xl font-bold text-orange-400">____Food Menu____</h1>
+        <h1 className="text-3xl font-bold text-orange-400">____Food Menu____</h1>
         <br />
         <h1 className="text-5xl font-bold text-black ">Most Popular Items</h1>
         <div className="grid grid-cols-2 grid-rows-4 gap-5">
-          <div className="w-[40vw] h-15 flex justify-evenly items-center my-4">
-            <img className="scale-3d mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
-            <div>
-              <p className="text-2xl text-black font-semibold">Chicken Tikka</p>
-              <p className=" text-slate-600 ">Lorem ipsum dolor sit amet consectetur Repellat tempore iure mollitia.</p>
-            </div>
-            <h1 className="text-orange-400 text-2xl font-bold">$115</h1>
-          </div>
-          <div className="w-[40vw] h-15 flex justify-evenly items-center my-4 ">
-            <img className="scale-3d mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
-            <div>
-              <p className="text-2xl text-black font-semibold">Chicken Tikka</p>
-              <p className=" text-slate-600 ">Lorem ipsum dolor sit amet consectetur Repellat tempore iure mollitia.</p>
-            </div>
-            <h1 className="text-orange-400 text-2xl font-bold">$115</h1>
-          </div>
-          <div className="w-[40vw] h-15 flex justify-evenly items-center my-4">
-            <img className="scale-3d mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
-            <div>
-              <p className="text-2xl text-black font-semibold">Chicken Tikka</p>
-              <p className=" text-slate-600 ">Lorem ipsum dolor sit amet consectetur Repellat tempore iure mollitia.</p>
-            </div>
-            <h1 className="text-orange-400 text-2xl font-bold">$115</h1>
-          </div>
-          <div className="w-[40vw] h-15 flex justify-evenly items-center my-4">
-            <img className="scale-3d mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
-            <div>
-              <p className="text-2xl text-black font-semibold">Chicken Tikka</p>
-              <p className=" text-slate-600 ">Lorem ipsum dolor sit amet consectetur Repellat tempore iure mollitia.</p>
-            </div>
-            <h1 className="text-orange-400 text-2xl font-bold">$115</h1>
-          </div>
-          <div className="w-[40vw] h-15 flex justify-evenly items-center my-4">
-            <img className="scale-3d mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
-            <div>
-              <p className="text-2xl text-black font-semibold">Chicken Tikka</p>
-              <p className=" text-slate-600 ">Lorem ipsum dolor sit amet consectetur Repellat tempore iure mollitia.</p>
-            </div>
-            <h1 className="text-orange-400 text-2xl font-bold">$115</h1>
-          </div>
+        <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <div   className='flex flex-col justify-center items-center flex-wrap'>
+                    <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
+                    <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
+                  </div>
+                  <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
+                </div> 
+                <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <div   className='flex flex-col justify-center items-center flex-wrap'>
+                    <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
+                    <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
+                  </div>
+                  <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
+                </div> 
+                <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <div   className='flex flex-col justify-center items-center flex-wrap'>
+                    <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
+                    <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
+                  </div>
+                  <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
+                </div> 
+                <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <div   className='flex flex-col justify-center items-center flex-wrap'>
+                    <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
+                    <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
+                  </div>
+                  <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
+                </div> 
+                <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <div   className='flex flex-col justify-center items-center flex-wrap'>
+                    <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
+                    <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
+                  </div>
+                  <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
+                </div> 
+                <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <div   className='flex flex-col justify-center items-center flex-wrap'>
+                    <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
+                    <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
+                  </div>
+                  <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
+                </div> 
         </div>
       </div>
 
@@ -172,30 +145,25 @@ function App() {
           <div className="w-[40vw] h-[70vh] bg-black items-center flex flex-col ">
             <h1 className="text-3xl text-orange-400 font-bold">Reservations___</h1>
             <h1 className="text-4xl text-white font-bold ">Book A Table Online</h1>
+           <form action="#" method="post" onSubmit={handleSubmit(onSubmit)}>
             <div className="w-[40vw] h-[20vh] grid grid-cols-2 grid-rows-2 gap-2 px-5 mt-5">
-              <input className="w-[18vw] h-[8vh] bg-white px-5 " type="text" placeholder="Enter Your Name..." />
-              <input className="w-[18vw] h-[8vh] bg-white px-5" type="Date" placeholder="Enter Date..." />
-              <input className="w-[18vw] h-[8vh] bg-white px-5" type="email" placeholder="Enter Your Email..." />
-              <input className="w-[18vw] h-[8vh] bg-white px-5" type="number" placeholder="Enter No.of People..." />
+              <input  {...register("username")}  className="w-[18vw] h-[8vh] bg-white px-5 " type="text" placeholder="Enter Your Name..." />
+              <input  {...register("date")}  className="w-[18vw] h-[8vh] bg-white px-5" type="Date" placeholder="Enter Date..." />
+              <input  {...register("email")} className="w-[18vw] h-[8vh] bg-white px-5" type="email" placeholder="Enter Your Email..." />
+              <input  {...register("people")}  className="w-[18vw] h-[8vh] bg-white px-5" type="number" placeholder="Enter No.of People..." />
             </div>
-
-            <textarea className="bg-white w-[37vw] h-[20vh] px-5 pt-2" name="text" id="text" placeholder="Special Request"></textarea>
-            <button className="bg-orange-400 w-[37vw] h-[8vh] text-white mt-5 hover:text-orange-400 hover:bg-white">BOOK NOW</button>
+            <textarea  {...register("text")}  className="bg-white w-[37vw] h-[20vh] px-5 pt-2 mx-5" placeholder="Special Request"></textarea>
+            <input onClick={()=>{alert("Table has successfully Booked")}} type="submit" value="BOOK NOW" className="bg-orange-400 w-[37vw] h-[8vh] mx-5 text-white mt-5 hover:text-orange-400 hover:bg-white"/>
+            </form>
           </div>
         </div>
       </div>
 
       {/* div-5 */}
-      <div className="w-[100vw] h-[80vh] flex flex-col justify-evenly items-center">
-        <h1 className="text-3xl text-orange-400 font-bold">___Team Members___</h1>
-        <h1 className="text-5xl text-black font-bold ">Our Master Chefs</h1>
-        <div className="w-[100vw] h-[60vh]  flex justify-evenly items-center">
-          <div className="w-[336px] h-[400px] flex flex-col justify-evenly items-center bg-white hover:scale-110"><img className="w-[288px] h-[288px] rounded-[50%]" src="src\assets\team-1.jpg" alt="chef" /> <h1 className="text-black font-bold text-2xl">Sahil Kamble</h1> <p className="text-slate-500 font-medium text-xl ">Head Chef</p></div>
-          <div className="w-[336px] h-[400px] flex flex-col justify-evenly items-center bg-white hover:scale-110"><img className="w-[288px] h-[288px] rounded-[50%]" src="src\assets\team-3.jpg" alt="chef" /> <h1 className="text-black font-bold text-2xl">Siddhant Jha</h1> <p className="text-slate-500 font-medium text-xl ">Vice Chef</p></div>
-          <div className="w-[336px] h-[400px] flex flex-col justify-evenly items-center bg-white hover:scale-110"><img className="w-[288px] h-[288px] rounded-[50%]" src="src\assets\team-2.jpg" alt="chef" /> <h1 className="text-black font-bold text-2xl">Aum Patel</h1> <p className="text-slate-500 font-medium text-xl ">Cook</p></div>
-          <div className="w-[336px] h-[400px] flex flex-col justify-evenly items-center bg-white hover:scale-110"><img className="w-[288px] h-[288px] rounded-[50%]" src="src\assets\team-4.jpg" alt="chef" /> <h1 className="text-black font-bold text-2xl">Sam Singh</h1> <p className="text-slate-500 font-medium text-xl ">Asst. Cook</p></div>
-        </div>
-      </div>
+
+
+
+      <Chefs />
 
       {/* div-6 */}
       <br />
@@ -249,99 +217,7 @@ function App() {
       <br />
       <br />
 
-      <div className="w-[100vw] h-[70vh] bg-black flex justify-center items-center">
-        <div className="flex justify-between items-start w-[70vw]">
-
-          {/* Company Section */}
-          <div className="w-1/4 flex flex-col items-start">
-            <h1 className="text-3xl text-orange-400 font-bold mb-4">Company___</h1>
-            <div>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> About Us
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Contact Us
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Privacy Policy
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Reservation
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Terms & Condition
-              </h1>
-            </div>
-          </div>
-
-          {/* Contact Section */}
-          <div className="w-1/4 flex flex-col items-start">
-            <h1 className="text-3xl text-orange-400 font-bold mb-4">Contact___</h1>
-            <div>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img className="w-[16.8px] h-[16.8px] mr-2" src="src/assets/icons8-location-50.png" alt=">" /> 123 Street, New York, USA
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img className="w-[16.8px] h-[16.8px] mr-2" src="src/assets/icons8-call-50.png" alt=">" /> +012 345 67890
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img className="w-[16.8px] h-[16.8px] mr-2" src="src/assets/icons8-mail-50.png" alt=">" /> info@example.com
-              </h1>
-            </div>
-          </div>
-
-          {/* Opening Section */}
-          <div className="w-1/4 flex flex-col items-start">
-            <h1 className="text-3xl text-orange-400 font-bold mb-4">Opening___</h1>
-            <div>
-              <h1 className="text-lg font-[20px] text-white flex items-center mb-1">
-                Monday - Saturday
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                09AM - 09PM
-              </h1>
-              <h1 className="text-lg font-[20px] text-white flex items-center mb-1">
-                Sunday
-              </h1>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                10AM - 08PM
-              </h1>
-
-            </div>
-          </div>
-
-          {/* Newsletter Section */}
-          <div className="w-1/4 flex flex-col items-start">
-            <h1 className="text-3xl text-orange-400 font-bold mb-4">Newsletter___</h1>
-            <div>
-              <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                About UsDolor amet sit justo amet elitr clita ipsum elitr est.
-              </h1>
-              <span className="text-md font-[15px]  flex items-center mb-1">
-                <input type="email" placeholder="Enter your email" className="w-[200px] bg-white h-[50px] pl-5" />
-            
-                <button className="bg-orange-400 text-white h-[50px] w-[100px]">Sign Up</button>
-              </span>
-
-            </div>
-          </div>
-
-        </div>
-       
-
-
-      </div>
-    <div className="w-[100vw] h-[10vh] flex justify-between items-center bg-black mt-0.5">
-                   <div className="w-1/2 flex flex-col justify-evenly items-start mx-5">
-                     <h1 className="text-lg font-semibold text-white ">© Your Site Name, All Right Reserved. Designed By HTML Codex</h1>
-                     <h1 className="text-lg font-semibold text-white ">Distributed By ThemeWagon</h1>
-                   </div>
-                   <div className="w-1/4 flex justify-center items-center">
-                  <h2 className="text-white font-medium text-2xl mr-5"> Home</h2> <h2 className="text-white font-medium text-2xl mr-5">Cookies</h2> <h2 className="text-white font-medium text-2xl mr-5">Help</h2> <h2 className="text-white font-medium text-2xl mr-5">FQAs</h2>
-                   </div>
-        </div>
-
-
+      <Footer />
     </>
   )
 }
