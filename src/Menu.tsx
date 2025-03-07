@@ -22,7 +22,19 @@ const Menu = () => {
 
  }
 
+ interface Burger {
+  name: string;
+  price: number;
+  img: string;
+  dsc: string;
+}
+
+
+
   return (
+
+    
+
     <>
         <div className="w-[100vw] h-[80vh] bg-red-400 bg-cover bg-center relative overflow-x-hidden flex justify-center items-center" style={{ backgroundImage: `url('src/assets/bgimage.jpg')` }}>
         <div className="w-[100vw] h-[80vh] absolute bg-black opacity-85 inset-0">
@@ -45,7 +57,7 @@ const Menu = () => {
       <br />
       <br />
       <div className='w-[100vw] grid grid-cols-2 grid-rows-12 px-32 '>
-        {burgers.map((burger,index:number) => (
+        {burgers.map((burger:Burger,index:number) => (
                   <div onClick={()=>billing(burger.name,burger.price)} key={index} className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
                   <img  className="w-[6vw] h-[10vh] mr-3" src={burger.img} alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
@@ -54,7 +66,7 @@ const Menu = () => {
                   </div>
                   <h1  className="text-orange-400 text-2xl font-bold pr-5">${burger.price}</h1>
                 </div>       
-        ))};
+        ))}
       
       </div>
       <br />
