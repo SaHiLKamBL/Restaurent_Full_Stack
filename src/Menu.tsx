@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Navbar from './components/Navbar'
-import burgers from './burgers.json'
 import Footer from './components/Footer';
+import burgers from './burgers.json';
 
 
 const Menu = () => {
@@ -45,7 +45,7 @@ const Menu = () => {
       <br />
       <br />
       <div className='w-[100vw] grid grid-cols-2 grid-rows-12 px-32 '>
-        {burgers.map((burger,index) => (
+        {burgers.map((burger,index:number) => (
                   <div onClick={()=>billing(burger.name,burger.price)} key={index} className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
                   <img  className="w-[6vw] h-[10vh] mr-3" src={burger.img} alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
