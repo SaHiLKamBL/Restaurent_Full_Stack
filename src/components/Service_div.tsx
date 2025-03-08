@@ -16,10 +16,10 @@ const Service = () => {
       <div className="w-[100vw] h-[50vh] bg-slate-50">
         <div ref={ref} className="w-[100vw] h-96 flex justify-evenly items-center">
           {[
-            { img: "src/assets/icons8-manager-100.png", title: "Master Chef" },
-            { img: "src/assets/icons8-restaurant-100.png", title: "Quality Food" },
-            { img: "src/assets/icons8-shopping-cart-100.png", title: "Online Order" },
-            { img: "src/assets/icons8-service-100.png", title: "24/7 Service" },
+            { img: "/assets/icons8-manager-100.png", title: "Master Chef" },
+            { img: "/assets/icons8-restaurant-100.png", title: "Quality Food" },
+            { img: "/assets/icons8-shopping-cart-100.png", title: "Online Order" },
+            { img: "/assets/icons8-service-100.png", title: "24/7 Service" },
           ].map((service, index) => (
             <motion.div
               key={index}

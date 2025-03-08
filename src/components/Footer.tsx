@@ -11,19 +11,19 @@ const Footer = () => {
             <h1 className="text-3xl text-orange-400 font-bold mb-4">Company___</h1>
             <div>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> About Us
+                <img src="/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> About Us
               </h1>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Contact Us
+                <img src="/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Contact Us
               </h1>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Privacy Policy
+                <img src="/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Privacy Policy
               </h1>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Reservation
+                <img src="/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Reservation
               </h1>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img src="src/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Terms & Condition
+                <img src="/assets/icons8-right-arrow-24.png" className="w-[16.8px] h-[16.8px] mr-2" alt=">" /> Terms & Condition
               </h1>
             </div>
           </div>
@@ -33,13 +33,13 @@ const Footer = () => {
             <h1 className="text-3xl text-orange-400 font-bold mb-4">Contact___</h1>
             <div>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img className="w-[16.8px] h-[16.8px] mr-2" src="src/assets/icons8-location-50.png" alt=">" /> 123 Street, New York, USA
+                <img className="w-[16.8px] h-[16.8px] mr-2" src="/assets/icons8-location-50.png" alt=">" /> 123 Street, New York, USA
               </h1>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img className="w-[16.8px] h-[16.8px] mr-2" src="src/assets/icons8-call-50.png" alt=">" /> +012 345 67890
+                <img className="w-[16.8px] h-[16.8px] mr-2" src="/assets/icons8-call-50.png" alt=">" /> +012 345 67890
               </h1>
               <h1 className="text-md font-[15px] text-white flex items-center mb-1">
-                <img className="w-[16.8px] h-[16.8px] mr-2" src="src/assets/icons8-mail-50.png" alt=">" /> info@example.com
+                <img className="w-[16.8px] h-[16.8px] mr-2" src="/assets/icons8-mail-50.png" alt=">" /> info@example.com
               </h1>
             </div>
           </div>

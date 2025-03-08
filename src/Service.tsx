@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 function About() {
   return (
     <>
-      <div className="w-[100vw] h-[80vh] bg-red-400 bg-cover bg-center relative overflow-x-hidden flex justify-center items-center" style={{ backgroundImage: `url('src/assets/bgimage.jpg')` }}>
+      <div className="w-[100vw] h-[80vh] bg-red-400 bg-cover bg-center relative overflow-x-hidden flex justify-center items-center" style={{ backgroundImage: `url('/assets/bgimage.jpg')` }}>
         <div className="w-[100vw] h-[80vh] absolute bg-black opacity-85 inset-0">
           <Navbar />
           <div className='w-[100vw] flex flex-col justify-center items-center mt-20 '>

@@ -6,6 +6,7 @@ import Chefs from "./components/Chefs";
 import Footer from "./components/Footer";
 import { useForm, SubmitHandler } from "react-hook-form"
 
+
 function App() {
   type Inputs = {
     example: string
@@ -41,7 +42,7 @@ function App() {
   
   return (
     <>
-      <div className="w-[100vw] h-[100vh] bg-red-400 bg-cover bg-center relative overflow-x-hidden" style={{ backgroundImage: `url('src/assets/bgimage.jpg')` }}>
+      <div className="w-[100vw] h-[100vh] bg-red-400 bg-cover bg-center relative overflow-x-hidden" style={{ backgroundImage: `url('/assets/bgimage.jpg')` }}>
         <div className="w-[100vw] h-[100vh] absolute bg-black opacity-85 inset-0">
           <Navbar />
           <div className="w-[100vw] flex justify-between items-center mx-10 mt-20 ">
@@ -55,7 +56,7 @@ function App() {
               <button className='text-white text-2xl font-semibold bg-orange-400 w-[213px] h-[57px] my-5 backdrop-opacity-100'> BOOK A TABLE</button>
             </div>
             <div className="w-1/2 flex items-center justify-center  ">
-              <img className="animate-[spin_20s_linear_infinite] h-lg w-lg" src="src\assets\pizzaog.png" alt="pizza" />
+              <img className="animate-[spin_20s_linear_infinite] h-lg w-lg" src="\assets\pizzaog.png" alt="pizza" />
             </div>
           </div>
 
@@ -85,7 +86,7 @@ function App() {
         <h1 className="text-5xl font-bold text-black ">Most Popular Items</h1>
         <div className="grid grid-cols-2 grid-rows-4 gap-5">
         <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
-                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="\assets\menu-1.jpg" alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
                     <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
                     <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
@@ -93,7 +94,7 @@ function App() {
                   <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
                 </div> 
                 <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
-                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="\assets\menu-1.jpg" alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
                     <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
                     <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
@@ -101,7 +102,7 @@ function App() {
                   <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
                 </div> 
                 <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
-                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="\assets\menu-1.jpg" alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
                     <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
                     <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
@@ -109,7 +110,7 @@ function App() {
                   <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
                 </div> 
                 <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
-                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="\assets\menu-1.jpg" alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
                     <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
                     <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
@@ -117,7 +118,7 @@ function App() {
                   <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
                 </div> 
                 <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
-                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="\assets\menu-1.jpg" alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
                     <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
                     <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
@@ -125,7 +126,7 @@ function App() {
                   <h1  className="text-orange-400 text-2xl font-bold pr-5">$12</h1>
                 </div> 
                 <div className="w-[40vw] h-[10.5vh] flex justify-between items-center my-4 border-2 border-slate-700 hover:scale-105 cursor-pointer">
-                  <img  className="w-[6vw] h-[10vh] mr-3" src="src\assets\menu-1.jpg" alt="menu1" />
+                  <img  className="w-[6vw] h-[10vh] mr-3" src="\assets\menu-1.jpg" alt="menu1" />
                   <div   className='flex flex-col justify-center items-center flex-wrap'>
                     <p  className="text-2xl text-black font-semibold">"VEG Aloo Tikki"</p>
                     <p  className=" text-slate-600 ">"Potato Tikki ,indian quisiun"</p>
@@ -140,7 +141,7 @@ function App() {
 
       <div className="w-[100vw] h-[80vh] flex justify-center items-center">
         <div className="w-[85vw] h-[70vh]  flex justify-center items-center">
-          <img className="w-[40vw] h-[70vh]" src="src\assets\famdin2.png" alt="famdin" />
+          <img className="w-[40vw] h-[70vh]" src="\assets\famdin2.png" alt="famdin" />
           <div className="w-[40vw] h-[70vh] bg-black items-center flex flex-col ">
             <h1 className="text-3xl text-orange-400 font-bold">Reservations___</h1>
             <h1 className="text-4xl text-white font-bold ">Book A Table Online</h1>
@@ -175,10 +176,10 @@ function App() {
         <div className="w-[100vw] h-[35vh] flex justify-evenly items-center ">
 
           <div className="w-[30vw] h-[25vh] border-2 border-slate-300 px-6">
-            <img className="w-[32px] h-[32px] mt-2" src="src\assets\icons8-quotation-mark-100.png" alt="Quotation mark" />
+            <img className="w-[32px] h-[32px] mt-2" src="\assets\icons8-quotation-mark-100.png" alt="Quotation mark" />
             <p className="text-md font-medium text-slate-600 mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,Lorem ipsum dolor sit amet.</p>
             <div className="w-[20vw] h-[15vh] flex item-center mt-5">
-              <img className="w-[50px] h-[50px] rounded-[50px]" src="src\assets\testimonial-1.jpg" alt="test1" />
+              <img className="w-[50px] h-[50px] rounded-[50px]" src="\assets\testimonial-1.jpg" alt="test1" />
               <div className="ml-5">
                 <h1 className="text-2xl text-black font-semibold">Client Name</h1>
                 <h2 className="text-sm text-slate-600 font-medium">Profession</h2>
@@ -187,10 +188,10 @@ function App() {
           </div>
 
           <div className="w-[30vw] h-[25vh]   px-6 bg-orange-400">
-            <img className="w-[32px] h-[32px] mt-2" src="src\assets\white quotation.png" alt="Quotation mark" />
+            <img className="w-[32px] h-[32px] mt-2" src="\assets\white quotation.png" alt="Quotation mark" />
             <p className="text-md font-medium text-white mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,Lorem ipsum dolor sit amet.</p>
             <div className="w-[20vw] h-[15vh] flex item-center mt-5">
-              <img className="w-[50px] h-[50px] rounded-[50px]" src="src\assets\testimonial-2.jpg" alt="test1" />
+              <img className="w-[50px] h-[50px] rounded-[50px]" src="\assets\testimonial-2.jpg" alt="test1" />
               <div className="ml-5">
                 <h1 className="text-2xl text-white font-semibold">Client Name</h1>
                 <h2 className="text-sm text-white font-medium">Profession</h2>
@@ -198,10 +199,10 @@ function App() {
             </div>
           </div>
           <div className="w-[30vw] h-[25vh] border-2 border-slate-300 px-6">
-            <img className="w-[32px] h-[32px] mt-2" src="src\assets\icons8-quotation-mark-100.png" alt="Quotation mark" />
+            <img className="w-[32px] h-[32px] mt-2" src="\assets\icons8-quotation-mark-100.png" alt="Quotation mark" />
             <p className="text-md font-medium text-slate-600 mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,Lorem ipsum dolor sit amet.</p>
             <div className="w-[20vw] h-[15vh] flex item-center mt-5">
-              <img className="w-[50px] h-[50px] rounded-[50px]" src="src\assets\testimonial-3.jpg" alt="test1" />
+              <img className="w-[50px] h-[50px] rounded-[50px]" src="\assets\testimonial-3.jpg" alt="test1" />
               <div className="ml-5">
                 <h1 className="text-2xl text-black font-semibold">Client Name</h1>
                 <h2 className="text-sm text-slate-600 font-medium">Profession</h2>

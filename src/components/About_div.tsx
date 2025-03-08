@@ -6,20 +6,20 @@ let About_div = () => {
         <>
             <div className="w-full h-[80vh] flex justify-between items-center px-5 ">
                 <div className="grid grid-cols-2 grid-rows-2 gap-2">
-                    <img className="w-80 h-80 " src="src\assets\about-1.jpg" alt="about1" />
+                    <img className="w-80 h-80 " src="\assets\about-1.jpg" alt="about1" />
                     <div className="flex justify-start items-end">
-                        <img className="h-60 w-60" src="src\assets\about-2.jpg" alt="about1" />
+                        <img className="h-60 w-60" src="\assets\about-2.jpg" alt="about1" />
                     </div>
                     <div className="flex justify-end items-start">
-                        <img className="h-60 w-60" src="src\assets\about-3.jpg" alt="about1" />
+                        <img className="h-60 w-60" src="\assets\about-3.jpg" alt="about1" />
                     </div>
-                    <img className="w-80 h-80" src="src\assets\about-4.jpg" alt="about1" />
+                    <img className="w-80 h-80" src="\assets\about-4.jpg" alt="about1" />
                 </div>
 
                 <div className="w-[50vw] flex justify-evenly flex-col items-start">
                     <h1 className="text-4xl font-bold text-orange-400">About Us</h1>
                     <br />
-                    <span className="text-3xl font-bold text-black flex ">Welcome to <img src="src\assets\icons8-restaurant-52.png" alt="reto" />Saeresto</span>
+                    <span className="text-3xl font-bold text-black flex ">Welcome to <img src="\assets\icons8-restaurant-52.png" alt="reto" />Saeresto</span>
                     <p className="text-xl text-slate-600 ">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed similique explicabo beatae sapiente tempora non odio molestias iure itaque quo.
                     </p>
