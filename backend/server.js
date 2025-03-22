@@ -2,12 +2,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
 const app=express()
-const port=3000;
+const port=process.env.PORT||3000;
 import bodyParser from 'body-parser';
 
 app.use(cors())
 app.use(bodyParser.json())
-mongoose.connect('mongodb+srv://sahilkamble1205:h3snmDysqhieXeUf@hotel.rf3tv.mongodb.net/Restaurent')
+mongoose.connect(process.env.MONGO_URl)
 let db=mongoose.connection;
 
 db.once('open',()=>{

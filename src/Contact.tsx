@@ -87,7 +87,7 @@ function Contact() {
           </div>
           <input  {...register("subject")} className='w-[40vw] h-[10vh] border-2 border-black pl-5 mb-4' type="text" placeholder='Subject' />
           <textarea  {...register("message")} className='w-[40vw] h-[30vh] border-2 border-black pl-5' placeholder='Message' />
-          <input onClick={()=>{alert("Contact successfully")}} type="submit" value="BOOK NOW" className="bg-orange-400 w-[38vw] h-[8vh] mx-4 text-white mt-5 "/>
+          <input onClick={()=>{alert("Contact successfully")}} type="submit" value="CONTACT NOW" className="bg-orange-400 w-[38vw] h-[8vh] mx-4 text-white mt-5 "/>
           </form>
         </div>
 
