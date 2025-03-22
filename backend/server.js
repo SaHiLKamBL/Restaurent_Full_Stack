@@ -2,13 +2,24 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
 const app=express()
-const port=process.env.PORT||3000;
+const port = process.env.PORT || 3000;
 import bodyParser from 'body-parser';
-
+import dotenv from 'dotenv';
 app.use(cors())
 app.use(bodyParser.json())
-mongoose.connect(process.env.MONGO_URl)
-let db=mongoose.connection;
+const MONGO_URL = process.env.MONGO_URL;
+
+if (!MONGO_URL) {
+    console.error("❌ MONGO_URL is not set. Check your .env file.");
+    process.exit(1); 
+}
+
+mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
 
 db.once('open',()=>{
    console.log("Mongodb Connected Successfully")
